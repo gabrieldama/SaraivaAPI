@@ -66,4 +66,18 @@ public class LivroService {
 
         return livroRepository.save(livro);
     }
+
+    public Livro atualizar(Long id, CriarLivroDTO dto){
+        Livro livro = buscarPorId(id);
+
+        livro.setTitulo(dto.nome());
+        livro.setAutor(dto.autor());
+        livro.setCapaUrl(dto.capaUrl());
+        livro.setAnoLancamento(dto.anoLancamento());
+        livro.setQuantidade(dto.quantidade());
+        livro.setDescricao(dto.descricao());
+        livro.setDisponivel(dto.quantidade() > 0);
+
+        return livroRepository.save(livro);
+    }
 }

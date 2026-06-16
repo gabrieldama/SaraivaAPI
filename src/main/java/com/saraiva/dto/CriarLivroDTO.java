@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 public record CriarLivroDTO(
-        @NotBlank(message = "Nome é obrigatório")
+        @NotBlank(message = "Titulo é obrigatório")
         String nome,
         String descricao,
         String capaUrl,
